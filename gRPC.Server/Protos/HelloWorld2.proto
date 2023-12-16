@@ -1,0 +1,15 @@
+syntax = "proto3";
+option csharp_namespace = "gRPCServer";
+package HelloWorld2;
+
+message HelloWorld2Request {
+	string message = 1;
+}
+
+message HelloWorld2Response {
+	string response = 1;
+}
+
+service HelloWorld2Service {
+	rpc GetHelloWorld2Message(HelloWorld2Request) returns (HelloWorld2Response);
+}

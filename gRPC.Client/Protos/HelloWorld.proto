@@ -1,0 +1,19 @@
+syntax = "proto3";
+option csharp_namespace = "gRPC.Client";
+
+package HelloWorld;
+
+service HelloWorld {
+	rpc GetHelloWorldMessage (HelloWorldRequest) returns (HelloWorldResponse);
+	rpc GetHelloWorldStream (HelloWorldRequest) returns (stream HelloWorldResponse);
+	rpc ReadHelloWorldStream (stream HelloWorldRequest) returns (HelloWorldResponse);
+	rpc BiDirectionalHelloWorld (stream HelloWorldRequest) returns (stream HelloWorldResponse);
+}
+
+message HelloWorldRequest {
+	string message = 1;
+}
+
+message HelloWorldResponse {
+	string message = 1;
+}
